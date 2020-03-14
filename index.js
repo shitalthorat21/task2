@@ -1,30 +1,16 @@
 const express = require('express');
 const router = express.Router();
-// require('./Store');
+const app = express();
+const pug=require('pug');
+var path=require('path');
+const port=8008;
 const userController=require('./userController');
+app.use(router);
+app.set('view engine', 'pug'); 
+app.set('views', path.join(__dirname, './views'));
 
-router.get('/', (req,res)=>{
-    console.log("hey");
-    res.render('hello',);
-})
+router.get('/users', userController.displayusers);
 
-
-
-router.get('/users', (req,res)=>{
-    const arr=[
-        {name:'Shital',age:30,city:'Pune',state:'Maharashtra'},
-        {name:'Kiran',age:30,city:'Pune',state:'Maharashtra'},
-        {name:'Advika',age:30,city:'Pune',state:'Maharashtra'},
-        {name:'Arvika',age:30,city:'Pune',state:'Maharashtra'},
-        {name:'Pratham',age:30,city:'Pune',state:'Maharashtra'},
-    ];
-    res.json(arr);
-})
-
-router.get('/admin', (req,res)=>{
-    
-    res.render('admin');
-})
-
-
- module.exports = router;
+app.listen(port, () => {
+      console.log("server listen on port:"+port);
+    });
