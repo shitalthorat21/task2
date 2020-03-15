@@ -1,14 +1,12 @@
 doctype html
 html(lang='en')
-  body
-   
-    table(style='width:100%' border='1')
+  body  
+   table(style='width:100%' border='1')     
       tr
         th NAME
         th AGE
         th CITY
         th STATE
-
       each a in arr
         tr
           td= a.name  
@@ -16,5 +14,6 @@ html(lang='en')
           td= a.city
           td= a.state
 
-  include mixins/userForm
-      +userForm()
+include userForm
+  +userForm()
+
