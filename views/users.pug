@@ -1,6 +1,7 @@
 doctype html
 html(lang='en')
   body
+   
     table(style='width:100%' border='1')
       tr
         th NAME
@@ -14,3 +15,6 @@ html(lang='en')
           td= a.age
           td= a.city
           td= a.state
+
+  include mixins/userForm
+      +userForm()
