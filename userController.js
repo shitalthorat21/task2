@@ -17,8 +17,8 @@ exports.displayusers=(req,res)=>{
     res.render('users',{arr:userData});
 }
 
-// exports.admin=(req,res)=>{
-//     res.render('index');
-// }
+exports.admin=(req,res)=>{
+    res.render('index');
+}
 
 
