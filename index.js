@@ -4,18 +4,18 @@ const app = express();
 const pug=require('pug');
 var path=require('path');
 const port=8008;
+const bodyParser=require('body-parser');
 const userController=require('./userController');
 app.use(router);
 app.set('view engine', 'pug'); 
 app.set('views', path.join(__dirname, './views'));
+app.use(bodyParser.json());
 
 router.get('/', userController.hello);
 router.get('/users', userController.displayusers);
-router.get('/users', userController.addUser);
-router.post('/users', userController.addUser);
+// router.get('/users', userController.addUser);
+router.post('/users', userController.displayusers);
 router.get('/admin', userController.admin);
-
-
 const mongoose = require('mongoose');
 
 require('dotenv').config({ path: 'variables.env' });
