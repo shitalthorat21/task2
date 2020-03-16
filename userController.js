@@ -5,6 +5,7 @@ var userData=[
     {"name":"Arvika","age":18,"city":"Pune","state":"Maharashtra"},
     {"name":"Pratham","age":21,"city":"Pune","state":"Maharashtra"}
 ];
+
 exports.displayusers=(req,res)=>{
     console.log("hi");  
     let list={name:req.query.name, 
